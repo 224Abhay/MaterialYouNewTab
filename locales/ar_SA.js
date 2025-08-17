@@ -147,6 +147,7 @@ const ar_SA = {
     redditEngine: "ريديت",
     wikipediaEngine: "ويكيبيديا",
     quoraEngine: "كورا",
+    chatgptEngine: "ChatGPT",
 
     // AI Tools
     ai_tools: "أدوات الذكاء الاصطناعي",

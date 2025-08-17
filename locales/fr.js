@@ -136,6 +136,7 @@ const fr = {
     "redditEngine": "Reddit",
     "wikipediaEngine": "Wikipedia",
     "quoraEngine": "Quora",
+    "chatgptEngine": "ChatGPT",
 
     // AI Tools
     "ai_tools": "Outils IA",

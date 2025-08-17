@@ -1,8 +1,5 @@
-> This extension is no longer maintained by its original creator, XengShi [(_Learn more_)](https://github.com/prem-k-r/materialYouNewTab/discussions/28#discussioncomment-13837571).  
-> It is now maintained by [Prem](https://github.com/prem-k-r) and [It'z RJ](https://github.com/itz-rj-here).  
-> You can create a backup from the old extension’s settings and restore it into this new version.
+> **🚀 This is a customized fork** with enhanced features including ChatGPT integration, multi-line search capabilities, and improved user experience. See the [Customizations & Enhancements](#-customizations--enhancements) section for details.
 
-<!-- Initialized : Sun 20 Aug 2023 03:41:08 PM IST -->
 <h1 align="center">
 
 <a href="https://prem-k-r.github.io/MaterialYouNewTab/"><img src="https://github.com/user-attachments/assets/48c3a9cb-06fa-4c45-92ec-194cdb7c5661" width="58"></a>
@@ -28,6 +25,7 @@ MYNT: Material You New Tab is a versatile browser extension that personalizes yo
 
 <p align="center">
   <a href="#-features">Features</a> •
+  <a href="#-customizations--enhancements">Customizations</a> •
   <a href="#-installation-guide">Installation Guide</a> •
   <a href="#download">Download</a> •
   <a href="#-currently-supported-languages-29">Currently Supported Languages</a>
@@ -45,7 +43,9 @@ MYNT: Material You New Tab is a versatile browser extension that personalizes yo
 
 ## ✨ Features
 
-- **Integrated Search**: Search directly from the New Tab using your preferred search engine — Google, DuckDuckGo, Bing, Brave Search, YouTube, Wikipedia, and more, with integrated voice typing.
+> **🔍 Enhanced Search**: This fork includes all original search engines plus **ChatGPT integration** with multi-line support for detailed prompts.
+
+- **Integrated Search**: Search directly from the New Tab using your preferred search engine — Google, DuckDuckGo, Bing, Brave Search, YouTube, Wikipedia, **ChatGPT**, and more, with integrated voice typing.
 - **Customizable Themes**: Choose from a selection of themes or use the built-in color picker to match your style.
 - **Wallpaper**: Upload your own wallpapers or enable daily random images sourced from [Lorem Picsum](https://picsum.photos).
 - **Personalized Greeting**: Add a custom message or your name, so you're greeted each time you open a new tab.
@@ -59,6 +59,70 @@ MYNT: Material You New Tab is a versatile browser extension that personalizes yo
 - **Backup & Reset**: Save or restore your setup anytime, or reset everything to default with one click.
 - **Language Support**: Use the extension in your preferred language for better accessibility.
 - **Browser Compatibility**: Supports all Chromium-based browsers, including **Chrome**, **Edge**, **Brave**, and **Opera**, as well as Firefox-based browsers like **Firefox** and **Zen**.
+
+## 🚀 Customizations & Enhancements
+
+This fork includes several custom improvements and enhancements to the original Material You New Tab extension:
+
+> **📚 Original Repository**: This is a fork of [Material You New Tab](https://github.com/prem-k-r/materialYouNewTab) by Prem and It'z RJ, which is based on the original work by XengShi. All original features and functionality are preserved and enhanced.
+
+### ✨ New Features Added
+
+- **🤖 ChatGPT Integration**: Added a new search engine option for ChatGPT with direct access to temporary chat
+- **📝 Multi-Line Search**: Replaced search input with a textarea for better user experience and auto-resizing capability
+- **⌨️ Enhanced Keyboard Support**: 
+  - `Enter` = Submit search
+  - `Shift+Enter` = Create new line (perfect for detailed ChatGPT prompts)
+- **🌐 Multi-Language Support**: Localized ChatGPT engine name in multiple languages
+
+### 🔧 Technical Improvements
+
+- **Auto-Resizing Searchbar**: Searchbar dynamically expands to accommodate multi-line text
+- **Smart Height Management**: Maximum height constraints prevent excessive expansion
+- **Improved Event Handling**: Better keyboard event management with proper event propagation
+- **Enhanced CSS**: Responsive design improvements and better textarea behavior
+- **Search Suggestion Compatibility**: Updated search suggestions to work seamlessly with new multi-line functionality
+
+### 🎯 Use Cases
+
+- **AI Interactions**: Write detailed, structured prompts for ChatGPT across multiple lines
+- **Complex Queries**: Better support for long search queries and detailed questions
+- **Natural Writing**: More intuitive text input experience similar to modern chat applications
+- **Professional Use**: Ideal for researchers, writers, and anyone needing detailed search capabilities
+
+### 🎯 How to Use ChatGPT Integration
+
+1. **Select ChatGPT Engine**: 
+   - Click on the search engine dropdown
+   - Choose "ChatGPT" from the search engine options
+   
+2. **Write Multi-Line Prompts**:
+   - Use `Shift+Enter` to create new lines
+   - Write detailed, structured prompts across multiple lines
+   - The searchbar will automatically expand to accommodate your text
+   
+3. **Submit Your Query**:
+   - Press `Enter` to submit your search
+   - You'll be redirected to ChatGPT with your prompt pre-filled
+   - Perfect for complex questions, code reviews, or detailed explanations
+
+### 🔄 What's Been Modified
+
+- **Files Modified**: `index.html`, `scripts/search.js`, `scripts/search-suggestions.js`, `style.css`
+- **Language Files**: Added ChatGPT translations to multiple language files
+- **Search Engine System**: Extended search engine options to include ChatGPT
+- **UI Components**: Enhanced searchbar with textarea and auto-resize functionality
+
+### 📋 License & Attribution
+
+This fork maintains the original GPL-3.0 license. When using or distributing this customized version:
+
+- **Credit the Original Authors**: Always acknowledge XengShi, Prem, and It'z RJ
+- **Include Source Code**: Due to GPL-3.0, you must provide access to the source code
+- **Respect the License**: Any modifications must also be distributed under GPL-3.0
+- **Forking**: Feel free to fork this repository and create your own customizations
+
+---
 
 ## 📥 Installation Guide
 

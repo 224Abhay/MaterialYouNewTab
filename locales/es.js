@@ -104,6 +104,7 @@ const es = {
     "bingEngine": "Bing",
     "braveEngine": "Brave",
     "youtubeEngine": "YouTube",
+    "chatgptEngine": "ChatGPT",
 
     // AI Tools
     "ai_tools": "Herramientas de IA",

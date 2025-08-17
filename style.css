@@ -1925,12 +1925,13 @@ html[lang="ta"] #temp {
 .searchbar {
 	margin-top: var(--gap);
 	width: 100%;
-	height: 60px;
+	min-height: 60px;
+	height: auto;
 	border-radius: var(--round);
 	background-color: var(--accentLightTint-blue);
 	position: relative;
 	outline: 2px solid #00000000;
-	transition: outline 0.3s;
+	transition: outline 0.3s, height 0.3s ease;
 }
 
 body[data-bg="wallpaper"] .searchbar {
@@ -1939,6 +1940,25 @@ body[data-bg="wallpaper"] .searchbar {
 		var(--accentLightTint-blue) calc(var(--transparency) + 10%),
 		transparent
 	);
+}
+
+/* Ensure searchbar maintains proper spacing when expanded */
+.searchbar.expanded {
+	min-height: 80px;
+	max-height: 240px; /* 200px textarea + 40px padding */
+	overflow: hidden;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+	#searchQ {
+		max-height: 150px;
+		font-size: 0.9rem;
+	}
+	
+	.searchbar {
+		min-height: 50px;
+	}
 }
 
 .searchbar.active {
@@ -1955,14 +1975,15 @@ body[data-bg="wallpaper"] .searchbar {
 
 .searchbar-content {
 	display: flex;
-	align-items: center;
-	height: 100%;
-	padding-inline-end: 10px;
+	align-items: flex-start;
+	min-height: 100%;
+	padding: 20px 10px 20px 0;
 }
 
 #searchQ {
 	flex-grow: 1;
-	height: 80%;
+	min-height: 80%;
+	max-height: 200px;
 	top: 0;
 	bottom: 0;
 	margin-block: auto;
@@ -1970,14 +1991,54 @@ body[data-bg="wallpaper"] .searchbar {
 	outline: none;
 	border: none;
 	background-color: #00000000;
-	padding: 0 2px;
-	margin-inline-start: 58px;
+	padding: 8px 2px;
 	font-size: 1rem;
+	resize: none;
+	overflow-y: auto;
+	line-height: 1.5;
+	font-family: inherit;
+	box-sizing: border-box;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 /* Default placeholder color */
 #searchQ::placeholder {
 	color: #757575;
+}
+
+/* Textarea focus state */
+#searchQ:focus {
+	outline: none;
+}
+
+/* Smooth transition for searchbar height changes */
+.searchbar {
+	transition: outline 0.3s, height 0.3s ease, min-height 0.3s ease;
+}
+
+/* Custom scrollbar for textarea */
+#searchQ::-webkit-scrollbar {
+	width: 6px;
+}
+
+#searchQ::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+#searchQ::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+}
+
+#searchQ::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure textarea scrollbar is visible when needed */
+#searchQ {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
 
 body[data-bg="wallpaper"] #searchQ::placeholder {
@@ -1988,7 +2049,7 @@ body[data-bg="wallpaper"] #searchQ::placeholder {
 	margin-inline-start: 10px;
 	inset-inline-end: 10px;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	height: 100%;
 }
 

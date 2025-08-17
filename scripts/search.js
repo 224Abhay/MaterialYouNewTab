@@ -9,6 +9,33 @@
 const searchbar = document.getElementById("searchbar");
 const searchInput = document.getElementById("searchQ");
 
+// Auto-resize textarea functionality
+function autoResizeTextarea() {
+    searchInput.style.height = 'auto';
+    const newHeight = Math.min(searchInput.scrollHeight, 200);
+    searchInput.style.height = newHeight + 'px';
+    
+    // Adjust searchbar height - constrain to textarea height + padding
+    const searchbarHeight = Math.min(240, Math.max(60, newHeight + 40)); // Max 240px (200px textarea + 40px padding)
+    searchbar.style.height = searchbarHeight + 'px';
+    
+    // Add/remove expanded class based on height
+    if (searchbarHeight > 60) {
+        searchbar.classList.add('expanded');
+    } else {
+        searchbar.classList.remove('expanded');
+    }
+}
+
+// Add event listeners for auto-resize
+searchInput.addEventListener('input', autoResizeTextarea);
+searchInput.addEventListener('focus', autoResizeTextarea);
+
+// Initialize textarea height on page load
+document.addEventListener('DOMContentLoaded', () => {
+    autoResizeTextarea();
+});
+
 const languageCode = (localStorage.getItem("selectedLanguage") || "en").slice(0, 2);
 const searchQueryURLs = {
     engine1: "https://www.google.com/search?q=",
@@ -19,7 +46,8 @@ const searchQueryURLs = {
     engine6: "https://www.google.com/search?tbm=isch&q=",
     engine7: "https://www.reddit.com/search/?q=",
     engine8: `https://${languageCode}.wikipedia.org/wiki/Special:Search?search=`,
-    engine9: "https://www.quora.com/search?q="
+    engine9: "https://www.quora.com/search?q=",
+    engine10: "https://chatgpt.com/?temporary-chat=true&q="
 };
 
 // Showing border or outline when you click on the searchbar
@@ -227,6 +255,23 @@ function performSearch(query) {
 
 // Event listeners
 enterBTN.addEventListener("click", () => performSearch());
+
+// Handle Enter key in textarea - use capture to ensure it runs first
+searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        if (event.shiftKey) {
+            // Allow new line with Shift+Enter
+            event.stopPropagation(); // Stop other listeners from interfering
+            return;
+        } else {
+            // Submit search with Enter
+            event.preventDefault();
+            event.stopPropagation(); // Stop other listeners from interfering
+            performSearch();
+        }
+    }
+}, { capture: true });
+
 // Enter key handling is managed in the search suggestions keydown listener
 
 // Set selected search engine from local storage

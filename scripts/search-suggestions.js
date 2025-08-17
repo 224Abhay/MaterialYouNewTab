@@ -171,6 +171,11 @@ searchInput.addEventListener("keydown", function (e) {
             }
 
         } else if (e.key === "Enter") {
+            // Check if Shift is held down - allow new line
+            if (e.shiftKey) {
+                return; // Allow default behavior (new line)
+            }
+            
             e.preventDefault();
             if (activeItem) {
                 // Selected suggestion + Enter = search
@@ -191,6 +196,11 @@ searchInput.addEventListener("keydown", function (e) {
             }
         }
     } else if (e.key === "Enter") {
+        // Check if Shift is held down - allow new line
+        if (e.shiftKey) {
+            return; // Allow default behavior (new line)
+        }
+        
         // No suggestions available, search with current input
         e.preventDefault();
         performSearch(this.value);

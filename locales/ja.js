@@ -132,6 +132,7 @@ const ja = {
     "redditEngine": "Reddit",
     "wikipediaEngine": "Wikipedia",
     "quoraEngine": "Quora",
+    "chatgptEngine": "ChatGPT",
 
     // AI Tools
     "ai_tools": "AIツール",
